@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# sublime: x_syntax Packages/Ruby/Ruby.tmLanguage
+# sublime: translate_tabs_to_spaces true; tab_size 2
+unless $:.any? {|p| p.include? 'pdba' }
+  require 'pathname'
+  $:.unshift(Pathname.new(__FILE__).dirname.parent.join('lib').to_s)
+end
+require 'pdba'
+
+PDBA::Application.run!
